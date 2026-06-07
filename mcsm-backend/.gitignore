@@ -45,20 +45,12 @@ data/.mcsm_installed
 logs/
 
 ### 运行时大文件（不提交，从发行版获取） ###
-data/*
-!data/config/
-data/config/*
-!data/config/application.properties.example
-!data/config/llm-providers.yml
-!data/init.sql
-!data/SetupCli.java
-!data/SetupCli.class
-!data/StopCli.java
-!data/StopCli.class
-!data/lib/mysql-connector.jar
-!data/mysql/my.ini
-!data/frp/frpc.toml
-!data/plugins/mcsm-bridge.jar
+data/jre/
+data/mysql/bin/
+data/mysql/data/
+data/mysql/share/
+data/templates/
+data/frp/windows/frpc.exe
 
 ### 测试产物 ###
 *.png
