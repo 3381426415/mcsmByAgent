@@ -55,15 +55,9 @@ data/config/*
 !data/SetupCli.class
 !data/StopCli.java
 !data/StopCli.class
-!data/lib/
 !data/lib/mysql-connector.jar
-!data/mysql/
 !data/mysql/my.ini
-!data/frp/
 !data/frp/frpc.toml
-!data/frp/windows/
-!data/frp/windows/frpc.exe
-!data/plugins/
 !data/plugins/mcsm-bridge.jar
 
 ### 测试产物 ###
