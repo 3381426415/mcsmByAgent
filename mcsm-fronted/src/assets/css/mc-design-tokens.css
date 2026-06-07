@@ -1,0 +1,203 @@
+/* ========================================
+   MC 可爱风格设计变量系统
+   Minecraft-inspired Cute Theme
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ===== 背景色系 - Minecraft 草地绿 ===== */
+  --mc-bg-primary: #87c054;
+  --mc-bg-secondary: #6b9c3a;
+  --mc-bg-tertiary: #5a8530;
+  --mc-bg-card: rgba(255, 255, 255, 0.95);
+  --mc-bg-overlay: rgba(0, 0, 0, 0.3);
+
+  /* ===== MC 经典色 ===== */
+  --mc-dirt-brown: #8b6914;
+  --mc-dirt-dark: #6b4f0e;
+  --mc-stone-gray: #7f7f7f;
+  --mc-stone-light: #a0a0a0;
+  --mc-wood-brown: #bc9862;
+  --mc-wood-dark: #9a7a4e;
+  --mc-water-blue: #3f76e4;
+  --mc-water-light: #5a8af0;
+  --mc-lava-orange: #ff6600;
+  --mc-lava-red: #e55c00;
+  --mc-diamond-cyan: #4aedd9;
+  --mc-diamond-light: #6ff5e5;
+  --mc-emerald-green: #17dd62;
+  --mc-emerald-dark: #12b854;
+  --mc-gold-yellow: #fcdb05;
+  --mc-gold-dark: #e5c600;
+  --mc-redstone-red: #ff0000;
+  --mc-redstone-dark: #cc0000;
+
+  /* ===== 可爱风格强调色 ===== */
+  --mc-pink: #ff6b9d;
+  --mc-pink-light: #ff8db5;
+  --mc-purple: #9b59b6;
+  --mc-purple-light: #b07cc6;
+  --mc-orange: #f39c12;
+  --mc-orange-light: #f5b041;
+  --mc-sky-blue: #3498db;
+  --mc-sky-light: #5dade2;
+
+  /* ===== 文字颜色 ===== */
+  --mc-text-primary: #3d3d3d;
+  --mc-text-secondary: #666666;
+  --mc-text-muted: #999999;
+  --mc-text-light: #ffffff;
+  --mc-text-dark: #1a1a1a;
+
+  /* ===== 边框颜色 ===== */
+  --mc-border: rgba(0, 0, 0, 0.1);
+  --mc-border-dark: rgba(0, 0, 0, 0.2);
+  --mc-border-light: rgba(255, 255, 255, 0.3);
+  --mc-border-accent: var(--mc-emerald-green);
+
+  /* ===== 阴影效果 ===== */
+  --mc-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --mc-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --mc-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --mc-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
+  --mc-shadow-glow: 0 0 20px rgba(23, 221, 98, 0.3);
+  --mc-shadow-gold: 0 0 20px rgba(252, 219, 5, 0.3);
+
+  /* ===== 圆角 - 可爱风格（圆润） ===== */
+  --mc-radius-xs: 4px;
+  --mc-radius-sm: 8px;
+  --mc-radius-md: 12px;
+  --mc-radius-lg: 16px;
+  --mc-radius-xl: 20px;
+  --mc-radius-2xl: 24px;
+  --mc-radius-full: 9999px;
+
+  /* ===== 间距 ===== */
+  --mc-spacing-xs: 4px;
+  --mc-spacing-sm: 8px;
+  --mc-spacing-md: 16px;
+  --mc-spacing-lg: 24px;
+  --mc-spacing-xl: 32px;
+  --mc-spacing-2xl: 48px;
+
+  /* ===== 字体 ===== */
+  --mc-font-display: 'Fredoka', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --mc-font-body: 'Fredoka', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --mc-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ===== 字体大小 ===== */
+  --mc-text-xs: 11px;
+  --mc-text-sm: 13px;
+  --mc-text-base: 15px;
+  --mc-text-lg: 17px;
+  --mc-text-xl: 20px;
+  --mc-text-2xl: 24px;
+  --mc-text-3xl: 32px;
+  --mc-text-4xl: 48px;
+
+  /* ===== 字体粗细 ===== */
+  --mc-font-light: 300;
+  --mc-font-normal: 400;
+  --mc-font-medium: 500;
+  --mc-font-semibold: 600;
+  --mc-font-bold: 700;
+
+  /* ===== 过渡动画 ===== */
+  --mc-transition-fast: 0.15s ease;
+  --mc-transition-normal: 0.25s ease;
+  --mc-transition-slow: 0.4s ease;
+  --mc-transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ===== Z-index 层级 ===== */
+  --mc-z-base: 1;
+  --mc-z-dropdown: 100;
+  --mc-z-sticky: 200;
+  --mc-z-fixed: 300;
+  --mc-z-modal-backdrop: 400;
+  --mc-z-modal: 500;
+  --mc-z-popover: 600;
+  --mc-z-tooltip: 700;
+
+  /* ===== 特殊效果 ===== */
+  --mc-glass-bg: rgba(255, 255, 255, 0.85);
+  --mc-glass-blur: blur(20px);
+  --mc-glass-border: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* ===== MC 方块纹理 ===== */
+  --mc-texture-dirt: repeating-linear-gradient(
+    90deg,
+    var(--mc-dirt-brown) 0px,
+    var(--mc-dirt-brown) 8px,
+    var(--mc-dirt-dark) 8px,
+    var(--mc-dirt-dark) 16px
+  );
+
+  --mc-texture-grass: linear-gradient(
+    180deg,
+    var(--mc-emerald-green) 0%,
+    var(--mc-emerald-green) 30%,
+    var(--mc-dirt-brown) 30%,
+    var(--mc-dirt-brown) 100%
+  );
+
+  --mc-texture-stone: repeating-linear-gradient(
+    45deg,
+    var(--mc-stone-gray) 0px,
+    var(--mc-stone-gray) 10px,
+    var(--mc-stone-light) 10px,
+    var(--mc-stone-light) 20px
+  );
+
+  --mc-texture-wood: repeating-linear-gradient(
+    0deg,
+    var(--mc-wood-brown) 0px,
+    var(--mc-wood-brown) 12px,
+    var(--mc-wood-dark) 12px,
+    var(--mc-wood-dark) 24px
+  );
+}
+
+/* ===== 全局基础样式 ===== */
+.mc-themed {
+  font-family: var(--mc-font-body);
+  color: var(--mc-text-primary);
+  background-color: var(--mc-bg-primary);
+}
+
+/* ===== MC 风格滚动条 ===== */
+.mc-themed ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.mc-themed ::-webkit-scrollbar-track {
+  background: var(--mc-bg-tertiary);
+  border-radius: var(--mc-radius-sm);
+}
+
+.mc-themed ::-webkit-scrollbar-thumb {
+  background: var(--mc-dirt-brown);
+  border-radius: var(--mc-radius-sm);
+  border: 2px solid var(--mc-bg-tertiary);
+}
+
+.mc-themed ::-webkit-scrollbar-thumb:hover {
+  background: var(--mc-wood-brown);
+}
+
+/* ===== MC 风格选择高亮 ===== */
+.mc-themed ::selection {
+  background: var(--mc-emerald-green);
+  color: var(--mc-text-light);
+}
+
+/* ===== MC 风格焦点样式 ===== */
+.mc-themed *:focus {
+  outline: 2px solid var(--mc-emerald-green);
+  outline-offset: 2px;
+}
+
+.mc-themed *:focus:not(:focus-visible) {
+  outline: none;
+}

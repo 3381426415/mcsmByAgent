@@ -1,0 +1,12 @@
+# MCSM Bridge 插件配置文件（自动生成）
+
+backend-url: ws://127.0.0.1:8000/ws/plugin
+server-id: default
+secret: ""
+
+database:
+  ip: 127.0.0.1
+  port: 3306
+  database: user
+  user: root
+  pass: q1256883810

@@ -1,0 +1,15 @@
+name: mcsn-serverBridge
+version: '1.0-SNAPSHOT'
+main: com.gitcode.mcsmServerBridge.McsmBridge
+api-version: '1.20'
+authors: [ yuanyang-genshinExpert ]
+description: a Ato bridge for mscn web panel
+
+commands:
+  bind:
+    description: 绑定你的网站账号
+    usage: /bind <用户名>
+  claim:
+    description: 领取暂存的物品
+    usage: /claim
+    aliases: [领取]

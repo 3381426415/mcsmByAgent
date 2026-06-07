@@ -1,0 +1,1 @@
+import{s as a}from"./index-h4BbrIWr.js";const r=(e,n="提示",t="warning")=>a.confirm(e,n,{confirmButtonText:t==="warning"?"确认删除":"确定",cancelButtonText:"取消",type:t,center:!0,draggable:!0,customClass:"apple-message-box",confirmButtonClass:t==="warning"?"el-button--danger":"el-button--primary",cancelButtonClass:"el-button--default",showClose:!1});export{r as a};

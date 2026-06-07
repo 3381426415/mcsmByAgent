@@ -1,0 +1,15 @@
+# MCSM FRP Client Config
+# Docs: https://github.com/fatedier/frp
+# 将此文件和 frpc.exe 放在 frp/ 目录下
+
+serverAddr = "your-server-ip"
+serverPort = 7000
+# auth.method = "token"
+# auth.token = "your-token"
+
+[[proxies]]
+name = "minecraft"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 25565
+remotePort = 25565

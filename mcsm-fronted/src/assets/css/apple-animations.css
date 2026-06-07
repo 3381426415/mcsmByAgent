@@ -1,0 +1,530 @@
+/* ========================================
+   Apple 简约风格动画库
+   Apple-inspired Minimalist Animations
+   ======================================== */
+
+/* ===== 基础过渡类 ===== */
+.apple-fade-enter-active,
+.apple-fade-leave-active {
+  transition: opacity var(--apple-transition-normal);
+}
+
+.apple-fade-enter-from,
+.apple-fade-leave-to {
+  opacity: 0;
+}
+
+.apple-slide-up-enter-active,
+.apple-slide-up-leave-active {
+  transition: all var(--apple-transition-normal);
+}
+
+.apple-slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.apple-slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.apple-scale-enter-active,
+.apple-scale-leave-active {
+  transition: all var(--apple-transition-spring);
+}
+
+.apple-scale-enter-from,
+.apple-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ===== 弹性回弹效果 ===== */
+@keyframes appleSpringBounce {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.apple-spring-enter {
+  animation: appleSpringBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 毛玻璃模糊过渡 ===== */
+@keyframes appleBlurReveal {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-blur-reveal {
+  animation: appleBlurReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 列表交错动画 ===== */
+@keyframes appleStaggerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: appleStaggerFadeIn 0.5s ease forwards;
+}
+
+.apple-stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.apple-stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.apple-stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.apple-stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.apple-stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.apple-stagger-item:nth-child(6) { animation-delay: 0.3s; }
+.apple-stagger-item:nth-child(7) { animation-delay: 0.35s; }
+.apple-stagger-item:nth-child(8) { animation-delay: 0.4s; }
+.apple-stagger-item:nth-child(9) { animation-delay: 0.45s; }
+.apple-stagger-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* ===== 平滑展开动画 ===== */
+@keyframes appleSmoothExpand {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+  100% {
+    max-height: var(--expanded-height, 500px);
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.apple-expand-enter {
+  animation: appleSmoothExpand 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: top;
+}
+
+/* ===== 数据加载骨架屏 ===== */
+@keyframes appleShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.apple-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--apple-bg-tertiary) 25%,
+    var(--apple-bg-secondary) 50%,
+    var(--apple-bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: appleShimmer 1.5s ease-in-out infinite;
+  border-radius: var(--apple-radius-md);
+}
+
+/* ===== 成功状态反馈 ===== */
+@keyframes appleSuccessPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 199, 89, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
+  }
+}
+
+.apple-success-feedback {
+  animation: appleSuccessPulse 0.6s ease-out;
+}
+
+/* ===== 错误状态反馈 ===== */
+@keyframes appleErrorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.apple-error-feedback {
+  animation: appleErrorShake 0.5s ease-out;
+}
+
+/* ===== 警告状态反馈 ===== */
+@keyframes appleWarningPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 149, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0);
+  }
+}
+
+.apple-warning-feedback {
+  animation: appleWarningPulse 0.6s ease-out;
+}
+
+/* ===== 按钮按下效果 ===== */
+@keyframes appleButtonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.apple-button-press {
+  animation: appleButtonPress 0.2s ease-out;
+}
+
+/* ===== 卡片悬浮效果 ===== */
+@keyframes appleCardHover {
+  0% {
+    transform: translateY(0);
+    box-shadow: var(--apple-shadow-sm);
+  }
+  100% {
+    transform: translateY(-2px);
+    box-shadow: var(--apple-shadow-md);
+  }
+}
+
+.apple-card-hover {
+  transition: all var(--apple-transition-normal);
+}
+
+.apple-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--apple-shadow-md);
+}
+
+/* ===== 淡入上移 ===== */
+@keyframes appleFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-fade-in-up {
+  animation: appleFadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 淡入下移 ===== */
+@keyframes appleFadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-fade-in-down {
+  animation: appleFadeInDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 淡入左移 ===== */
+@keyframes appleFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.apple-fade-in-left {
+  animation: appleFadeInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 淡入右移 ===== */
+@keyframes appleFadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.apple-fade-in-right {
+  animation: appleFadeInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 缩放进入 ===== */
+@keyframes appleScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.apple-scale-in {
+  animation: appleScaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 旋转加载 ===== */
+@keyframes appleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.apple-spinner {
+  animation: appleSpin 1s linear infinite;
+}
+
+/* ===== 脉冲效果 ===== */
+@keyframes applePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.apple-pulse {
+  animation: applePulse 2s ease-in-out infinite;
+}
+
+/* ===== 呼吸效果 ===== */
+@keyframes appleBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.apple-breathe {
+  animation: appleBreathe 3s ease-in-out infinite;
+}
+
+/* ===== 滑入动画 ===== */
+@keyframes appleSlideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.apple-slide-in {
+  animation: appleSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 滑出动画 ===== */
+@keyframes appleSlideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.apple-slide-out {
+  animation: appleSlideOut 0.3s ease-in forwards;
+}
+
+/* ===== 模态框背景 ===== */
+@keyframes appleModalBackdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.apple-modal-backdrop {
+  animation: appleModalBackdrop 0.2s ease-out;
+}
+
+/* ===== 模态框内容 ===== */
+@keyframes appleModalContent {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.apple-modal-content {
+  animation: appleModalContent 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 工具提示 ===== */
+@keyframes appleTooltip {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-tooltip {
+  animation: appleTooltip 0.2s ease-out;
+}
+
+/* ===== 下拉菜单 ===== */
+@keyframes appleDropdown {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.95);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+.apple-dropdown {
+  animation: appleDropdown 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ===== 通知滑入 ===== */
+@keyframes appleNotificationSlide {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.apple-notification {
+  animation: appleNotificationSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 标签切换 ===== */
+@keyframes appleTabSwitch {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-tab-content {
+  animation: appleTabSwitch 0.3s ease-out;
+}
+
+/* ===== 进度条动画 ===== */
+@keyframes appleProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress, 100%);
+  }
+}
+
+.apple-progress {
+  animation: appleProgress 1s ease-out forwards;
+}
+
+/* ===== 打字机效果 ===== */
+@keyframes appleTypewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.apple-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: appleTypewriter 2s steps(40) forwards;
+}
+
+/* ===== 光标闪烁 ===== */
+@keyframes appleBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.apple-cursor {
+  animation: appleBlink 1s step-end infinite;
+}

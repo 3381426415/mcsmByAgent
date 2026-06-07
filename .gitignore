@@ -1,0 +1,36 @@
+# ==================== IDE / Dev Config ====================
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.springBeans
+.sts4-cache
+.apt_generated
+
+# ==================== Build Output ====================
+**/target/
+**/dist/
+**/node_modules/
+**/build/
+
+# ==================== Logs ====================
+*.log
+logs/
+
+# ==================== OS Files ====================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ==================== Env ====================
+.env
+.env.local
+.env.*.local
+
+# ==================== Maven Wrapper Jar ====================
+**/.mvn/wrapper/maven-wrapper.jar

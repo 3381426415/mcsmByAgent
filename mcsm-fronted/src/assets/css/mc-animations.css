@@ -1,0 +1,440 @@
+/* ========================================
+   MC 可爱风格动画库
+   Minecraft-inspired Cute Animations
+   ======================================== */
+
+/* ===== 基础过渡类 ===== */
+.mc-fade-enter-active,
+.mc-fade-leave-active {
+  transition: opacity var(--mc-transition-normal);
+}
+
+.mc-fade-enter-from,
+.mc-fade-leave-to {
+  opacity: 0;
+}
+
+.mc-slide-up-enter-active,
+.mc-slide-up-leave-active {
+  transition: all var(--mc-transition-normal);
+}
+
+.mc-slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mc-slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.mc-scale-enter-active,
+.mc-scale-leave-active {
+  transition: all var(--mc-transition-bounce);
+}
+
+.mc-scale-enter-from,
+.mc-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* ===== 方块弹跳效果 ===== */
+@keyframes mcBlockBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.mc-bounce {
+  animation: mcBlockBounce 0.5s ease-in-out;
+}
+
+.mc-bounce-hover:hover {
+  animation: mcBlockBounce 0.5s ease-in-out;
+}
+
+/* ===== 像素化淡入 ===== */
+@keyframes mcPixelFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.mc-pixel-enter {
+  animation: mcPixelFadeIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 可爱闪烁效果 ===== */
+@keyframes mcCuteSparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.mc-sparkle {
+  animation: mcCuteSparkle 2s ease-in-out infinite;
+}
+
+/* ===== MC 风格方块旋转 ===== */
+@keyframes mcRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mc-spinner {
+  animation: mcRotate 1s linear infinite;
+}
+
+/* ===== 可爱心跳效果 ===== */
+@keyframes mcCuteHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+.mc-heartbeat {
+  animation: mcCuteHeartbeat 1.5s ease-in-out infinite;
+}
+
+/* ===== 方块堆叠动画 ===== */
+@keyframes mcBlockStack {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  60% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mc-stack-enter {
+  animation: mcBlockStack 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 交错动画延迟 ===== */
+.mc-stagger-item {
+  opacity: 0;
+  animation: mcBlockStack 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mc-stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.mc-stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.mc-stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.mc-stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.mc-stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.mc-stagger-item:nth-child(6) { animation-delay: 0.3s; }
+.mc-stagger-item:nth-child(7) { animation-delay: 0.35s; }
+.mc-stagger-item:nth-child(8) { animation-delay: 0.4s; }
+.mc-stagger-item:nth-child(9) { animation-delay: 0.45s; }
+.mc-stagger-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* ===== 摇摆效果 ===== */
+@keyframes mcWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.mc-wiggle {
+  animation: mcWiggle 0.5s ease-in-out;
+}
+
+.mc-wiggle-hover:hover {
+  animation: mcWiggle 0.5s ease-in-out;
+}
+
+/* ===== 弹跳进入 ===== */
+@keyframes mcBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mc-bounce-in {
+  animation: mcBounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 弹跳退出 ===== */
+@keyframes mcBounceOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+.mc-bounce-out {
+  animation: mcBounceOut 0.4s ease-in forwards;
+}
+
+/* ===== 浮动效果 ===== */
+@keyframes mcFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.mc-float {
+  animation: mcFloat 3s ease-in-out infinite;
+}
+
+/* ===== 闪光效果 ===== */
+@keyframes mcShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.mc-shine {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: mcShine 2s ease-in-out infinite;
+}
+
+/* ===== 粒子效果 ===== */
+@keyframes mcParticle {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
+
+.mc-particle {
+  animation: mcParticle 1s ease-out forwards;
+}
+
+/* ===== 成功反馈 ===== */
+@keyframes mcSuccessPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(23, 221, 98, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(23, 221, 98, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(23, 221, 98, 0);
+  }
+}
+
+.mc-success-feedback {
+  animation: mcSuccessPulse 0.6s ease-out;
+}
+
+/* ===== 错误反馈 ===== */
+@keyframes mcErrorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.mc-error-feedback {
+  animation: mcErrorShake 0.5s ease-out;
+}
+
+/* ===== 加载动画 ===== */
+@keyframes mcLoadingDots {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mc-loading-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.mc-loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--mc-emerald-green);
+  border-radius: 50%;
+  animation: mcLoadingDots 1.4s ease-in-out infinite;
+}
+
+.mc-loading-dots span:nth-child(1) { animation-delay: 0s; }
+.mc-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.mc-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ===== 进度条动画 ===== */
+@keyframes mcProgressStripe {
+  0% {
+    background-position: 1rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.mc-progress-stripe {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: mcProgressStripe 0.5s linear infinite;
+}
+
+/* ===== 闪烁星星装饰 ===== */
+@keyframes mcTwinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.mc-twinkle {
+  animation: mcTwinkle 1.5s ease-in-out infinite;
+}
+
+/* ===== 方块放置效果 ===== */
+@keyframes mcPlaceBlock {
+  0% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotate(-5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.mc-place {
+  animation: mcPlaceBlock 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ===== 物品拾取效果 ===== */
+@keyframes mcPickup {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) translateY(-20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) translateY(-40px);
+    opacity: 0;
+  }
+}
+
+.mc-pickup {
+  animation: mcPickup 0.5s ease-out forwards;
+}
+
+/* ===== 经验值获取效果 ===== */
+@keyframes mcXpGain {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.mc-xp-gain {
+  animation: mcXpGain 0.8s ease-out forwards;
+  color: var(--mc-emerald-green);
+  font-weight: bold;
+}

@@ -1,0 +1,71 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### 敏感配置（运行时生成，不提交） ###
+/application.properties
+application-*.yml
+application-*.yaml
+data/config/application.properties
+data/config/agent-config.yml
+data/config/db.properties
+data/.mcsm_installed
+
+### 运行时产物 ###
+logs/
+
+### 运行时大文件（不提交，从发行版获取） ###
+data/*
+!data/config/
+data/config/*
+!data/config/application.properties.example
+!data/config/llm-providers.yml
+!data/init.sql
+!data/SetupCli.java
+!data/SetupCli.class
+!data/StopCli.java
+!data/StopCli.class
+!data/lib/
+!data/lib/mysql-connector.jar
+!data/mysql/
+!data/mysql/my.ini
+!data/frp/
+!data/frp/frpc.toml
+!data/frp/windows/
+!data/frp/windows/frpc.exe
+!data/plugins/
+!data/plugins/mcsm-bridge.jar
+
+### 测试产物 ###
+*.png
+test_*.py

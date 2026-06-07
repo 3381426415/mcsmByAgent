@@ -1,0 +1,5 @@
+export { default as McButton } from './McButton.vue'
+export { default as McCard } from './McCard.vue'
+export { default as McInput } from './McInput.vue'
+export { default as McBadge } from './McBadge.vue'
+export { default as McTooltip } from './McTooltip.vue'

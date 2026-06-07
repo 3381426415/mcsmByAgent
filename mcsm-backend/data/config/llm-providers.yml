@@ -1,0 +1,19 @@
+providers:
+  mimo:
+    name: 小米 MiMo(tokenplan-CN)
+    baseUrl: https://token-plan-cn.xiaomimimo.com/v1
+    modelsEndpoint: /models
+    thinkingField: reasoning_content
+    contentField: content
+    toolCallsField: tool_calls
+    deltaContentField: content
+    deltaToolCallsField: tool_calls
+  deepseek:
+    name: DeepSeek
+    baseUrl: https://api.deepseek.com/v1
+    modelsEndpoint: https://api.deepseek.com/models
+    thinkingField: reasoning_content
+    contentField: content
+    toolCallsField: tool_calls
+    deltaContentField: content
+    deltaToolCallsField: tool_calls
